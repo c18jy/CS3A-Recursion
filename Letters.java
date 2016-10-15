@@ -57,7 +57,13 @@ public class Letters {
 	 * you may use the slice function
 	 */
 	static int capitalCount(char[] arr) {
-		throw new NotImplemented();
+		if(arr.length == 0 )
+			return 0;
+		else if(Character.isUpperCase(arr[0]))
+			return 1 + capitalCount(slice(arr, 1));
+		else 
+			return capitalCount(slice(arr, 1));
+
 	}
 	
 	/*

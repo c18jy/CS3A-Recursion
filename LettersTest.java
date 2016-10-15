@@ -6,6 +6,8 @@ public class LettersTest {
 	public static void main(String[] args) {
 		System.out.println("isPalindrome " + (palindromeTest()?"Passed":"Failed"));
 	System.out.println("Letter count " + (letterCountTest()?"Passed":"Failed"));
+	System.out.println("Capital count" + (capitalCountTest()?"Passed":"Failed"));
+
 }
 	
 	/*
@@ -18,6 +20,11 @@ public class LettersTest {
 	
 	static boolean letterCountTest() {
 		if(Letters.letterCount("Hello".toCharArray(), 'l')!=2) return false;
+		return true;
+	}
+
+	static boolean capitalCountTest(){
+		if(Letters.capitalCount("HelLO".toCharArray())!= 3) return false;
 		return true;
 	}
 
