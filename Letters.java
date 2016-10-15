@@ -45,7 +45,13 @@ public class Letters {
 	 * you may use the slice function
 	 */
 	static int wordCount(char[] arr) {
-		throw new NotImplemented();
+		if(arr.length ==0)
+			return 1;
+		if(arr[0] == ' ')
+			return 1 + wordCount(slice(arr, 1));
+		else
+			return wordCount(slice(arr, 1));
+	
 	}
 
 	/*

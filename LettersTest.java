@@ -7,7 +7,7 @@ public class LettersTest {
 		System.out.println("isPalindrome " + (palindromeTest()?"Passed":"Failed"));
 	System.out.println("Letter count " + (letterCountTest()?"Passed":"Failed"));
 	System.out.println("Capital count" + (capitalCountTest()?"Passed":"Failed"));
-
+	System.out.println("Word count" + (wordCountTest()?"Passed":"Failed"));
 }
 	
 	/*
@@ -27,5 +27,9 @@ public class LettersTest {
 		if(Letters.capitalCount("HelLO".toCharArray())!= 3) return false;
 		return true;
 	}
-
+	
+	static boolean wordCountTest(){
+		if(Letters.wordCount("Hello world".toCharArray()) != 2) return false;
+		return true;
+	}
 }
