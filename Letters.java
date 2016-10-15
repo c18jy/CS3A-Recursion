@@ -69,7 +69,12 @@ public class Letters {
 	 * you may use the slice function
 	 */
 	static int letterCount(char[] arr, char letter) {
-		throw new NotImplemented();
+		if(arr.length == 0)
+			return 0;
+		else if(arr[0] == letter)
+			return 1 + letterCount(slice(arr, 1), letter);
+		else
+			return letterCount(slice(arr, 1), letter);  
 	}	
 
 	/*
