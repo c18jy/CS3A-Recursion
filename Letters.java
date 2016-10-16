@@ -34,7 +34,9 @@ public class Letters {
 	  reverseHelper(arr, i);
 
 	}
-
+/*
+Helper function for reverse
+*/
 	static void reverseHelper(char[] arr, int i){
 		if(i >= arr.length/2)
 			return;
