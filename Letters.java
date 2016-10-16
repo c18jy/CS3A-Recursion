@@ -99,7 +99,15 @@ public class Letters {
 	 * you may use the slice function
 	 */
 	static boolean contains(char[] arr, char[] sub) {
-		throw new NotImplemented();
+		if(arr.length == 0)
+			return false;
+		else if(sub.length == 0)
+			return true;
+		else if(arr[0] == sub[0])
+			return contains(slice(arr, 1), slice(sub, 1)) || contains(slice(arr, 1), sub);
+		else
+			return contains(slice(arr, 1), sub);
+
 	}
 
 	

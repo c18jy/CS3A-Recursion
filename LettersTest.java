@@ -8,6 +8,7 @@ public class LettersTest {
 	System.out.println("Letter count " + (letterCountTest()?"Passed":"Failed"));
 	System.out.println("Capital count" + (capitalCountTest()?"Passed":"Failed"));
 	System.out.println("Word count" + (wordCountTest()?"Passed":"Failed"));
+	System.out.println("Contains" + (containsTest()?"Passed":"Failed"));
 }
 	
 	/*
@@ -32,4 +33,11 @@ public class LettersTest {
 		if(Letters.wordCount("Hello world".toCharArray()) != 2) return false;
 		return true;
 	}
+
+	static boolean containsTest(){
+		if(Letters.contains("Hello".toCharArray(), "l".toCharArray()) != true) return false;
+		return true;
+
+	}
+
 }
