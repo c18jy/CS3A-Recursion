@@ -9,13 +9,16 @@ public class LettersTest {
 	System.out.println("Capital count" + (capitalCountTest()?"Passed":"Failed"));
 	System.out.println("Word count" + (wordCountTest()?"Passed":"Failed"));
 	System.out.println("Contains" + (containsTest()?"Passed":"Failed"));
+	System.out.println("reverse" + (reverseTest()?"Passed":"Failed"));
+
 }
 	
 	/*
 	 * note: you should test more thoroughly than this:
 	 */
 	static boolean palindromeTest() {
-		if(Letters.isPalindrome("ABBA")!=true) return false; 
+		if(Letters.isPalindrome("ABBA".toCharArray())!=true) return false;
+		if(Letters.isPalindrome("ABCBA".toCharArray()) != true) return false;
 		return true;
 	}
 	
@@ -38,6 +41,20 @@ public class LettersTest {
 		if(Letters.contains("Hello".toCharArray(), "l".toCharArray()) != true) return false;
 		return true;
 
+	}
+	
+	static boolean reverseTest(){
+		char[] orig = "hello".toCharArray();
+		char[] reversed = "olleh".toCharArray();
+
+		Letters.reverse(orig);
+
+		for(int i = 0; i<orig.length; i++){
+			if(orig[i] != reversed[i])
+				return false;
+		}
+
+	  return true;
 	}
 
 }

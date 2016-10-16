@@ -13,16 +13,14 @@ public class Letters {
 	 * recursion: are the first and last letters the same?
 	 * base case: is the word length <=2?
 	 */
-	static boolean isPalindrome(String palCheck) {
-		if(palCheck.length() <= 1){
+	static boolean isPalindrome(char[] arr) {
+		if(arr.length <= 1){
 			return true;
 		}
-			if(palCheck.charAt(0) == palCheck.charAt(palCheck.length()-1)){
-				return isPalindrome(palCheck.substring(1,palCheck.length()-1));
-		}
-		else{ 
+		if(arr[0] == arr[arr.length-1])
+			 return isPalindrome(slice(arr, 1, arr.length-1));			 
+		else
 			return false;
-		}
 	}
 	
 	/*
@@ -32,7 +30,21 @@ public class Letters {
 	 * b has the ith and |a|-ith letters swapped  
 	 */
 	static void reverse(char[] arr) {
-		throw new NotImplemented();
+		int i = 0;
+	  reverseHelper(arr, i);
+
+	}
+
+	static void reverseHelper(char[] arr, int i){
+		if(i >= arr.length/2)
+			return;
+	  
+		char temp = arr[i];
+		arr[i] = arr[arr.length-i-1];
+		arr[arr.length-i-1] = temp;
+
+		
+	  reverseHelper(arr, i+1);
 
 	}
 
